@@ -3,19 +3,27 @@
 % CC BY 4.0 license.
 
 \documentclass[11pt,a4paper]{article}
-\usepackage{ltj-zhfonts,parskip,mdframed,luamplib,libertinus}
+\usepackage{ltj-zhfonts,parskip,mdframed,luamplib}
 \usepackage[pdfstartview={FitH},pdfencoding={auto},
   pdfauthor={李果正},pdfsubject={LaTeX 正誤手冊},
   pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX,convention},
   bookmarksopen={true}]{hyperref}
 
+\definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
+\definecolor{bulgarianrose}{rgb}{0.28, 0.02, 0.03}
+
 % 章節後不會留有正常空白，需要 startcode 校正。
 \newmdenv[linecolor=red,frametitle=誤：,leftmargin=1em,rightmargin=1em,
   startcode=\leavevmode,topline=false,bottomline=false,linewidth=1.2pt,
   skipabove=2ex]{Wrong}
-\newmdenv[linecolor=blue,frametitle=正：,leftmargin=1em,rightmargin=1em,
-  topline=false,bottomline=false,linewidth=1.2pt,
+\newmdenv[linecolor=britishracinggreen,frametitle=正：,leftmargin=1em,
+  rightmargin=1em,topline=false,bottomline=false,linewidth=1.2pt,
   skipabove=2ex]{Right}
+
+\newcommand{\back}{%
+  \begin{flushright}
+  \hyperlink{contents}{\textit{\textbf{\textcolor{bulgarianrose}{回目錄}}}}
+  \end{flushright}}
 
 \title{\textsf{\textbf{\LaTeX 正誤手冊}}}
 \author{李果正Guoo Jehng Lee}
@@ -30,30 +38,33 @@
 但是關於\TeX/\LaTeX 的語法，這就是非黑即白了，語法錯誤，嚴重的會使編譯中止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也包括了語法上的錯誤。
 
 \section{基礎語法}
+\label{sec:syntax}
 
 \subsection{單位前需要小空白}
+\label{sub:unit}
 
 \begin{Wrong}
 \begin{verbatim}
 台灣南北的長度大約 394km，東西上大闊度大約 144km。
 \end{verbatim}
-\end{Wrong}
 
 台灣南北的長度大約 394km，東西上大闊度大約 144km。
+\end{Wrong}
 
 \begin{Right}
 \begin{verbatim}
 台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
 \end{verbatim}
-\end{Right}
 
 台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\end{Right}
 
 單位前需要一個小空白（插入\char`\\,）。可以參考{\sf siunitx}套件的例子。
 如果不想傷這個腦筋，可以引用{\sf siunitx}套件，依照它的使用方法來表現數字及單位，
 這樣就可以全文一致，不必一個一個去手動修正。
 
 \subsection{一些特殊字元不能直接鍵入}
+\label{sub:special}
 
 \begin{Wrong}
 \begin{verbatim}
@@ -84,21 +95,33 @@ TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，�
 \}             & 標示命令的作用範圍   & \verb|\}| & \verb|\textbraceright|\\
 \textless      & 數學模式中的小於符號 & \verb|$<$| & \verb|\textless| \\
 \textgreater & 數學模式中的大於符號   & \verb|$>$| & \verb|\textgreater| \\
-\textbar     & OT1 編碼，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
+\textbar     & OT1，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
 \&           & 表格中的分隔符號   & \verb|\&| & NA
 \end{tabular}
 \normalsize
 
+%\begin{flushright}
+%\hyperlink{contents}{\textit{\textbf{回目錄}}}
+%\end{flushright}
+\back
+
 \section{套件使用}
+\label{sec:package}
 
 \section{使用中文}
+\label{sec:chinese}
 
 \section{數理式子}
+\label{sec:math}
 
 \section{圖表處理}
+\label{sec:figure}
 
 \section{索引、文獻參考}
+\label{sec:index}
 
+\clearpage
+\hypertarget{contents}{}
 \tableofcontents
 
 \end{document}
