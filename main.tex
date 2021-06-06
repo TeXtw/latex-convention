@@ -3,37 +3,92 @@
 % CC BY 4.0 license.
 
 \documentclass[11pt,a4paper]{article}
-\usepackage{ltj-zhfonts,parskip,mdframed,listings,luamplib,libertinus}
+\usepackage{ltj-zhfonts,parskip,mdframed,luamplib,libertinus}
+\usepackage[pdfstartview={FitH},pdfencoding={auto},
+  pdfauthor={李果正},pdfsubject={LaTeX 正誤手冊},
+  pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX,convention},
+  bookmarksopen={true}]{hyperref}
+
+% 章節後不會留有正常空白，需要 startcode 校正。
+\newmdenv[linecolor=red,frametitle=誤：,leftmargin=1em,rightmargin=1em,
+  startcode=\leavevmode,topline=false,bottomline=false,linewidth=1.2pt,
+  skipabove=2ex]{Wrong}
+\newmdenv[linecolor=blue,frametitle=正：,leftmargin=1em,rightmargin=1em,
+  topline=false,bottomline=false,linewidth=1.2pt,
+  skipabove=2ex]{Right}
 
 \title{\textsf{\textbf{\LaTeX 正誤手冊}}}
 \author{李果正Guoo Jehng Lee}
 \date{\zhtoday}
 
-\newmdenv[linecolor=red,frametitle=誤：,leftmargin=1em,rightmargin=1em,
-          topline=false,bottomline=false,linewidth=1.2pt]{Wrong}
-\newmdenv[linecolor=blue,frametitle=正：,leftmargin=1em,rightmargin=1em,
-          topline=false,bottomline=false,linewidth=1.2pt]{Right}
-
 \begin{document}
+
 \maketitle
+
 排版有許多慣例，甚至最後形成標準。這份文件主要就是排除違反慣例的情況。當然所謂慣例，除非形成標準，要不然仍然是會有爭議（就算是形成了標準，也還是有些人不願意遵守），這無所謂對、錯，這份文件的「正誤」也只是針對多數人遵從的慣例而言，不是完全的非黑即白。
 
 但是關於\TeX/\LaTeX 的語法，這就是非黑即白了，語法錯誤，嚴重的會使編譯中止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也包括了語法上的錯誤。
 
 \section{基礎語法}
 
+\subsection{單位前需要小空白}
+
+%這是測試文！
 
 \begin{Wrong}
+\begin{verbatim}
 台灣南北的長度大約 394km，東西上大闊度大約 144km。
+\end{verbatim}
+\end{Wrong}
+
+台灣南北的長度大約 394km，東西上大闊度大約 144km。
+
+\begin{Right}
+\begin{verbatim}
+台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\end{verbatim}
+\end{Right}
+
+台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+
+單位前需要一個小空白（插入\char`\\,）。可以參考{\sf siunitx}套件的例子。
+如果不想傷這個腦筋，可以引用{\sf siunitx}套件，依照它的使用方法來表現數字及單位，
+這樣就可以全文一致，不必一個一個去手動修正。
+
+\subsection{一些特殊字元不能直接鍵入}
+
+\begin{Wrong}
+\begin{verbatim}
+TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，那是指令的引頭字元，直接鍵入編譯也不會過。
+\end{verbatim}
 \end{Wrong}
 
 \begin{Right}
-台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\begin{verbatim}
+那麼這類字元要如何鍵入呢？可以使用 \ 去 escape 它，但唯獨這個倒斜線不行，要用 \textbackslash 來鍵入，或者進入數學模式 $\backslash$，這些指令都滿長的。另有簡單的方式，就是直接取出字元來 \char`\\ 就可以了（那個 ` 是左單引號）。
+\end{verbatim}
 \end{Right}
 
-單位前需要一個小空白（插入$\backslash$,）。可以參考{\sf siunitx}套件的例子。
-如果不想傷這個腦筋，可以引用{\sf siunitx}套件，這樣對於數籽及單位的表現，
-就可以全文一致。
+以下說明各種特殊符號的鍵入方式。
+
+\begin{tabular}{llll}
+符號 & 作用 & 文稿上使用 & \LaTeX\ 的替代指令 \\
+\hline
+\textbackslash & 下排版命令 & \verb|$\backslash$| & \verb|\textbackslash|\\
+\%             & 註解       & \verb|\%|           & NA \\
+\#             & 定義巨集   & \verb|\#|           & NA \\
+\~{}           & 產生一個空白   & \verb|\~{}|     & \verb|\textasciitilde| \\
+\$             & 進入（離開）數學模式 & \verb|\$| & \verb|\textdollar| \\
+\_{}           & 數學模式中產生下標字 & \verb|\_{}| & \verb|\textunderscore| \\
+\^{}           & 數學模式中產生上標字 & \verb|\^{}| & \verb|\textasciicircum| \\
+\{             & 標示命令的作用範圍   & \verb|\{| & \verb|\textbraceleft|\\
+\}             & 標示命令的作用範圍   & \verb|\}| & \verb|\textbraceright|\\
+\textless      & 數學模式中的小於符號 & \verb|$<$| & \verb|\textless| \\
+\textgreater & 數學模式中的大於符號   & \verb|$>$| & \verb|\textgreater| \\
+\textbar     & OT1 編碼，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
+\&           & 表格中的分隔符號   & \verb|\&| & NA
+\end{tabular}
+
 
 \section{套件使用}
 
