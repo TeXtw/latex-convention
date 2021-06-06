@@ -1,0 +1,48 @@
+% !TEX program = LuaLaTeX + luatex-ja
+% Copyright © 2021 Guoo Jehng Lee
+% CC BY 4.0 license.
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{ltj-zhfonts,parskip,mdframed,listings,luamplib,libertinus}
+
+\title{\textsf{\textbf{\LaTeX 正誤手冊}}}
+\author{李果正Guoo Jehng Lee}
+\date{\zhtoday}
+
+\newmdenv[linecolor=red,frametitle=誤：,leftmargin=1em,rightmargin=1em,
+          topline=false,bottomline=false,linewidth=1.2pt]{Wrong}
+\newmdenv[linecolor=blue,frametitle=正：,leftmargin=1em,rightmargin=1em,
+          topline=false,bottomline=false,linewidth=1.2pt]{Right}
+
+\begin{document}
+\maketitle
+排版有許多慣例，甚至最後形成標準。這份文件主要就是排除違反慣例的情況。當然所謂慣例，除非形成標準，要不然仍然是會有爭議（就算是形成了標準，也還是有些人不願意遵守），這無所謂對、錯，這份文件的「正誤」也只是針對多數人遵從的慣例而言，不是完全的非黑即白。
+
+但是關於\TeX/\LaTeX 的語法，這就是非黑即白了，語法錯誤，嚴重的會使編譯中止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也包括了語法上的錯誤。
+
+\section{基礎語法}
+
+
+\begin{Wrong}
+台灣南北的長度大約 394km，東西上大闊度大約 144km。
+\end{Wrong}
+
+\begin{Right}
+台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\end{Right}
+
+單位前需要一個小空白（插入$\backslash$,）。可以參考{\sf siunitx}套件的例子。
+如果不想傷這個腦筋，可以引用{\sf siunitx}套件，這樣對於數籽及單位的表現，
+就可以全文一致。
+
+\section{套件使用}
+
+\section{使用中文}
+
+\section{數理式子}
+
+\section{圖表處理}
+
+\section{索引、文獻參考}
+
+\end{document}
