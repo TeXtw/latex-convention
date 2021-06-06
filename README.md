@@ -17,3 +17,9 @@
 ### 圖表處理
 
 ### 索引、文獻參考
+
+編譯所需字型，可以在：
+
+[luatexja-template/fonts at main · qtnez/luatexja-template (github.com)](https://github.com/qtnez/luatexja-template/tree/main/fonts)
+
+下載安裝至作業系統。
