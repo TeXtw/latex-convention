@@ -30,6 +30,6 @@
 \end{Right}
 \char`\\\texttt{mytext}是事先定義好的一段文字。在改變字型大小時要注意它的行距，它會依原先的行距來排版，要校正這個問題，要在 group 的 \char`\} 之前先換成下一個段落。
 
-不做這樣的調整的話，例子裡頭的小字（footnotesize）的段落，它的行距太大，因為是依原先normalsize的行距來排版（\TeX 是依段落來斷行的，在此之前一切資訊未定）。小字應依小字的比例來縮小行距，同理改變成大字時，也應依大字的行距來照比例調大。
+不做這樣的調整的話，例子裡頭的小字（footnotesize）的段落，它的行距太大，因為是依原先normalsize的行距來排版（\TeX 是依段落來斷行的，在此之前一切資訊未定）。小字應依小字的比例來縮小行距，同理改變成大字時，也應依大字的行距來照比例調大。請參考\href{https://tex.stackexchange.com/questions/444039/why-do-i-have-to-use-par-if-i-change-font-size-withing-a-group-scope}{\textsf{StackExchange}}上的討論。
 
-\back
+\marginpar{\back}
