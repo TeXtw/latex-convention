@@ -3,6 +3,13 @@
 % CC BY 4.0 license.
 
 \documentclass[11pt,a4paper]{article}
+
+% 定義 input 路徑
+\makeatletter
+  \def\input@path{{./pieces/}}
+  %or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
+
 \usepackage{ltj-zhfonts,parskip,mdframed,luamplib}
 \usepackage[pdfstartview={FitH},pdfencoding={auto},
   pdfauthor={李果正},pdfsubject={LaTeX 正誤手冊},
@@ -12,6 +19,7 @@
 \definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
 \definecolor{bulgarianrose}{rgb}{0.28, 0.02, 0.03}
 
+% 正誤條的環境定義：
 % 章節後不會留有正常空白，需要 startcode 校正。
 \newmdenv[linecolor=red,frametitle=誤：,leftmargin=1em,rightmargin=1em,
   startcode=\leavevmode,topline=false,bottomline=false,linewidth=1.2pt,
@@ -20,14 +28,16 @@
   rightmargin=1em,topline=false,bottomline=false,linewidth=1.2pt,
   skipabove=2ex]{Right}
 
+% 回目錄的定義
 \newcommand{\back}{%
   \begin{flushright}
   \hyperlink{contents}{\textit{\textbf{\textcolor{bulgarianrose}{回目錄}}}}
   \end{flushright}}
 
+% \zhtoday 定義於 ltj-zhfonts.sty。
 \title{\textsf{\textbf{\LaTeX 正誤手冊}}}
-\author{李果正Guoo Jehng Lee}
-\date{\zhtoday}
+\author{\small 李果正 Guoo Jehng Lee}
+\date{\small \zhtoday}
 
 \begin{document}
 
@@ -40,69 +50,12 @@
 \section{基礎語法}
 \label{sec:syntax}
 
-\subsection{單位前需要小空白}
-\label{sub:unit}
+\input{b1}
 
-\begin{Wrong}
-\begin{verbatim}
-台灣南北的長度大約 394km，東西上大闊度大約 144km。
-\end{verbatim}
+\back
 
-台灣南北的長度大約 394km，東西上大闊度大約 144km。
-\end{Wrong}
+\input{b2}
 
-\begin{Right}
-\begin{verbatim}
-台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
-\end{verbatim}
-
-台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
-\end{Right}
-
-單位前需要一個小空白（插入\char`\\,）。可以參考{\sf siunitx}套件的例子。
-如果不想傷這個腦筋，可以引用{\sf siunitx}套件，依照它的使用方法來表現數字及單位，
-這樣就可以全文一致，不必一個一個去手動修正。
-
-\subsection{一些特殊字元不能直接鍵入}
-\label{sub:special}
-
-\begin{Wrong}
-\begin{verbatim}
-TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，那是指令的引頭字元，直接鍵入編譯也不會過。
-\end{verbatim}
-\end{Wrong}
-
-\begin{Right}
-\begin{verbatim}
-那麼這類字元要如何鍵入呢？可以使用 \ 去 escape 它，但唯獨這個倒斜線不行，要用 \textbackslash 來鍵入，或者進入數學模式 $\backslash$，這些指令都滿長的。另有簡單的方式，就是直接取出字元來 \char`\\ 就可以了（那個 ` 是左單引號）。
-\end{verbatim}
-\end{Right}
-
-以下說明各種特殊符號的鍵入方式。
-
-\small
-\begin{tabular}{llll}
-符號 & 作用 & 文稿上使用 & \LaTeX\ 的替代指令 \\
-\hline
-\textbackslash & 下排版命令 & \verb|$\backslash$| & \verb|\textbackslash|\\
-\%             & 註解       & \verb|\%|           & NA \\
-\#             & 定義巨集   & \verb|\#|           & NA \\
-\~{}           & 產生一個空白   & \verb|\~{}|     & \verb|\textasciitilde| \\
-\$             & 進入（離開）數學模式 & \verb|\$| & \verb|\textdollar| \\
-\_{}           & 數學模式中產生下標字 & \verb|\_{}| & \verb|\textunderscore| \\
-\^{}           & 數學模式中產生上標字 & \verb|\^{}| & \verb|\textasciicircum| \\
-\{             & 標示命令的作用範圍   & \verb|\{| & \verb|\textbraceleft|\\
-\}             & 標示命令的作用範圍   & \verb|\}| & \verb|\textbraceright|\\
-\textless      & 數學模式中的小於符號 & \verb|$<$| & \verb|\textless| \\
-\textgreater & 數學模式中的大於符號   & \verb|$>$| & \verb|\textgreater| \\
-\textbar     & OT1，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
-\&           & 表格中的分隔符號   & \verb|\&| & NA
-\end{tabular}
-\normalsize
-
-%\begin{flushright}
-%\hyperlink{contents}{\textit{\textbf{回目錄}}}
-%\end{flushright}
 \back
 
 \section{套件使用}
