@@ -1,21 +1,23 @@
 % !TEX program = LuaLaTeX + luatex-ja
-% Copyright © 2021 Guoo Jehng Lee
+% Copyright © 2021 Guoo Jehng Lee <edt1023@gmail.com>
 % CC BY 4.0 license.
+% Talking: https://t.me/TWTUG  (Taiwan TeX User Group)
 
 \documentclass[11pt,a4paper]{article}
 
 % 定義 input 路徑
 \makeatletter
   \def\input@path{{./pieces/}}
-  %or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+  %or: \def\input@path{{./figures/}{./pieces/}}
 \makeatother
 
 \usepackage{ltj-zhfonts,parskip,mdframed,luamplib,mparhack}
 \usepackage[pdfstartview={FitH},pdfencoding={auto},
-  pdfauthor={李果正},pdfsubject={LaTeX 正誤手冊},
-  pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX,convention},
+  pdfauthor={李果正 Guoo Jehng Lee},pdfsubject={LaTeX 正誤手冊},
+  pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX, typesetting, conventions},
   bookmarksopen={true}]{hyperref}
 
+% 定義正誤條邊框顏色及「回目錄」 button 顏色
 \definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
 \definecolor{bulgarianrose}{rgb}{0.28, 0.02, 0.03}
 
