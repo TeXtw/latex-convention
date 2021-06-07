@@ -84,11 +84,11 @@ acs-*.bib
 *.lox
 
 # feynmf/feynmp
-*.mf
-*.mp
+#*.mf
+#*.mp
 *.t[1-9]
 *.t[1-9][0-9]
-*.tfm
+#*.tfm
 
 #(r)(e)ledmac/(r)(e)ledpar
 *.end
@@ -140,8 +140,8 @@ acs-*.bib
 # knitr
 *-concordance.tex
 # TODO Comment the next line if you want to keep your tikz graphics files
-*.tikz
-*-tikzDictionary
+#*.tikz
+#*-tikzDictionary
 
 # listings
 *.lol
@@ -291,5 +291,8 @@ TSWLatexianTemp*
 
 # glossaries
 *.glstex
+
+# my vim note style files.
+*.note
 
 # End of https://www.toptal.com/developers/gitignore/api/latex
