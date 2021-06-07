@@ -1,0 +1,36 @@
+\subsection{一些特殊字元不能直接鍵入}
+\label{sub:special}
+
+\begin{Wrong}
+\begin{verbatim}
+TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，那是指令的引頭字元，直接鍵入編譯也不會過。
+\end{verbatim}
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+那麼這類字元要如何鍵入呢？可以使用 \ 去 escape 它，但唯獨這個倒斜線不行，要用 \textbackslash 來鍵入，或者進入數學模式 $\backslash$，這些指令都滿長的。另有簡單的方式，就是直接取出字元來 \char`\\ 就可以了（那個 ` 是左單引號）。
+\end{verbatim}
+\end{Right}
+
+以下說明各種特殊符號的鍵入方式。
+
+\small
+\begin{tabular}{llll}
+符號 & 作用 & 文稿上使用 & \LaTeX\ 的替代指令 \\
+\hline
+\textbackslash & 下排版命令 & \verb|$\backslash$| & \verb|\textbackslash|\\
+\%             & 註解       & \verb|\%|           & NA \\
+\#             & 定義巨集   & \verb|\#|           & NA \\
+\~{}           & 產生一個空白   & \verb|\~{}|     & \verb|\textasciitilde| \\
+\$             & 進入（離開）數學模式 & \verb|\$| & \verb|\textdollar| \\
+\_{}           & 數學模式中產生下標字 & \verb|\_{}| & \verb|\textunderscore| \\
+\^{}           & 數學模式中產生上標字 & \verb|\^{}| & \verb|\textasciicircum| \\
+\{             & 標示命令的作用範圍   & \verb|\{| & \verb|\textbraceleft|\\
+\}             & 標示命令的作用範圍   & \verb|\}| & \verb|\textbraceright|\\
+\textless      & 數學模式中的小於符號 & \verb|$<$| & \verb|\textless| \\
+\textgreater & 數學模式中的大於符號   & \verb|$>$| & \verb|\textgreater| \\
+\textbar     & OT1，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
+\&           & 表格中的分隔符號   & \verb|\&| & NA
+\end{tabular}
+\normalsize

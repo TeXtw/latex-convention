@@ -1,0 +1,22 @@
+\subsection{單位前需要小空白}
+\label{sub:unit}
+
+\begin{Wrong}
+\begin{verbatim}
+台灣南北的長度大約 394km，東西上大闊度大約 144km。
+\end{verbatim}
+
+台灣南北的長度大約 394km，東西上大闊度大約 144km。
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\end{verbatim}
+
+台灣南北的長度大約 394\,km，東西上大闊度大約 144\,km。
+\end{Right}
+
+單位前需要一個小空白（插入\char`\\,）。可以參考{\sf siunitx}套件的例子。
+如果不想傷這個腦筋，可以引用{\sf siunitx}套件，依照它的使用方法來表現數字及單位，
+這樣就可以全文一致，不必一個一個去手動修正。
