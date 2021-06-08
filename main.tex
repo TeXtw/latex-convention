@@ -11,13 +11,9 @@
   % \def\input@path{{./figures/}{./pieces/}}
 \makeatother
 
-\usepackage{ltj-zhfonts,parskip,mdframed,luamplib,mparhack}
+\usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath}
 \usepackage[nomath]{libertinus}
-\usepackage[math-style=ISO]{unicode-math}
-\usepackage[pdfstartview={FitH},pdfencoding={auto},
-  pdfauthor={李果正 Guoo Jehng Lee},pdfsubject={LaTeX 正誤手冊},
-  pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX, typesetting, conventions},
-  bookmarksopen={true}]{hyperref}
+%\usepackage[math-style=ISO]{unicode-math}
 
 % 定義正誤條邊框顏色及「回目錄」 button 顏色
 \definecolor{britishracinggreen}{rgb}{0.0, 0.26, 0.15}
@@ -37,6 +33,11 @@
   \begin{flushright}
   \hyperlink{contents}{\textit{\textbf{\textcolor{bulgarianrose}{回目錄}}}}
   \end{flushright}}
+
+\usepackage[pdfstartview={FitH},pdfencoding={auto},
+  pdfauthor={李果正 Guoo Jehng Lee},pdfsubject={LaTeX 正誤手冊},
+  pdftitle={LaTeX 正誤手冊},pdfkeywords={LaTeX, typesetting, conventions},
+  bookmarksopen={true}]{hyperref}
 
 % \zhtoday 定義於 ltj-zhfonts.sty。
 %\title{\textsf{\textbf{\LaTeX 正誤手冊}}}
@@ -81,8 +82,13 @@
 \section{圖表處理}
 \label{sec:figure}
 
+\input{m1}
+
 \section{索引、文獻參考}
 \label{sec:index}
+
+\section{其他、雜項}
+\label{sec:miscellaneous}
 
 \clearpage
 \hypertarget{contents}{}
