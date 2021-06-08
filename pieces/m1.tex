@@ -1,0 +1,25 @@
+%\subsection{數理式子需要適當的空白}
+
+\begin{Wrong}
+\begin{verbatim}
+\[L(s)=\int^b_a\sqrt{1+(f'(x))^2}dx.\]
+\end{verbatim}
+\[L(s)=\int^b_a\sqrt{1+(f'(x))^2}dx.\]
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+\[L(s)=\int^b_a \! \sqrt{1+(f'(x))^2}\,\text{d}x.\]
+\end{verbatim}
+\[L(s)=\int^b_a \! \sqrt{1+(f'(x))^2} \, \text{d}x.\]
+\end{Right}
+
+微分符號本身是一種運算子（operator），並不是變數，
+在數學模式\LaTeX 需要數學斜體的變數來和其它字母做區分，
+他在此的地位類似單位，之前要留一個小空白，而且必需使
+用正體，不能使用數學斜體。這在ISO 80000 2標準裡頭也是如此
+認定。但是這個有爭議，大體而言，數學家較多偏向用數學
+斜體（包括 Knuth 本人也是使用數學斜體），物理學家較多偏向
+用正體\footnote{可以參考\href{https://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator}{\sf StackExchange}的討論}。不過，既然有標準出現了，大家還盡量遵循標準比較恰當\footnote{Knuth在設計\TeX 的時候，這個標準還沒有出現}。
+
+\marginpar{\back}
