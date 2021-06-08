@@ -18,8 +18,10 @@
 
 ### 索引、文獻參考
 
+### 其他
+
 編譯所需字型，可以在：
 
 [luatexja-template/fonts at main · qtnez/luatexja-template (github.com)](https://github.com/qtnez/luatexja-template/tree/main/fonts)
 
-下載安裝至作業系統。
+下載安裝至作業系統。編譯需要 lualatex，由於標點符號的調整（ChineseJFM），因此最好使用 TeX Live 2021 的版本，否則需要自行安裝 [ChineseJFM](https://github.com/tanukihee/ChineseJFM)。
