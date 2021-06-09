@@ -8,10 +8,11 @@
 % 定義 input 路徑
 \makeatletter
   \def\input@path{{./pieces/}}
-  % \def\input@path{{./figures/}{./pieces/}}
+% \def\input@path{{./figures/}{./pieces/}}
 \makeatother
 
-\usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath}
+% siunitx 和 physics 會有衝突 \qty 要用 \SI 取代。
+\usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath,siunitx,textcomp}
 \usepackage[nomath]{libertinus}
 %\usepackage[math-style=ISO]{unicode-math}
 
@@ -53,12 +54,23 @@
 
 \maketitle
 
-排版有許多慣例，甚至最後形成標準。這份文件主要就是排除違反慣例的情況。當然所謂慣例，除非形成標準，要不然仍然是會有爭議（就算是形成了標準，也還是有些人不願意遵守），這無所謂對、錯，這份文件的「正誤」也只是針對多數人遵從的慣例而言，不是完全的非黑即白。
+排版有許多慣例，甚至最後形成標準。這份文件主要就是排除違反慣例的情況。當
+然所謂慣例，除非形成標準，要不然仍然是會有爭議（就算是形成了標準，也還是
+有些人不願意遵守），這無所謂對、錯，這份文件的「正誤」也只是針對多數人遵
+從的慣例而言，不是完全的非黑即白。
 
-但是關於\TeX/\LaTeX 的語法，這就是非黑即白了，語法錯誤，嚴重的會使編譯中止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也包括了語法上的錯誤。
+但是關於\TeX/\LaTeX 的語法，這就是非黑即白了，語法錯誤，嚴重的會使編譯中
+止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也
+包括了語法上的錯誤。
 
 \section{基礎語法}
 \label{sec:syntax}
+
+%這一節是關於一些較基本、普遍的排版慣例、規範。也包括\LaTeX 的基礎語法的
+%錯用。以下每個小節都是一個獨立的單元，為了索引方便，在每一小節末的右手邊
+%，會有一個「回目錄」的文字 button，可以馬上回到目錄，利於查找，至於到了
+%目錄，目錄本身的各小節本就有超連結的功能。為了閱讀方便，目錄是放在文件的
+%最後，當成索引使用。
 
 \input{b1}
 
