@@ -14,12 +14,22 @@
 \[L(s)=\int^b_a \! \sqrt{1+(f'(x))^2} \, \text{d}x.\]
 \end{Right}
 
-微分符號本身是一種運算子（operator），並不是變數，
-在數學模式\LaTeX 需要數學斜體的變數來和其它字母做區分，
-他在此的地位類似單位，之前要留一個小空白，而且必需使
-用正體，不能使用數學斜體。這在ISO 80000 2標準裡頭也是如此
-認定。但是這個有爭議，大體而言，數學家較多偏向用數學
+微分符號本身是一種運算子（operator），並不是變數，在數學模式\LaTeX 需要
+數學斜體的變數來和其它字母做區分，他在此的地位類似單位，之前要留一個小空
+白，而且必需使用正體（upright），不能使用數學斜體（italic）。這在\href{https://saso.gov.sa/ar/mediacenter/public_multimedia/Documents/SASO-ISO-800000-2-2020-E.pdf}{ISO 80000-2}標準裡頭也是如此認定。
+
+但是這個微分符號是否要正體是有爭議的，大體而言，數學家較多偏向用數學
 斜體（包括 Knuth 本人也是使用數學斜體），物理學家較多偏向
-用正體\footnote{可以參考\href{https://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator}{\sf StackExchange}的討論}。不過，既然有標準出現了，大家還盡量遵循標準比較恰當\footnote{Knuth在設計\TeX 的時候，這個標準還沒有出現}。
+用正體\footnote{可以參考\href{https://tex.stackexchange.com/questions/14821/whats-the-proper-way-to-typeset-a-differential-operator}{\sf StackExchange}的討論。}。不過，既然有標準出現了，大家還是盡量遵循標準比較恰當\footnote{Knuth在設計\TeX 的時候，這個標準還沒有出現。}。
+
+使用 \verb|\text{d}| 需要{\sf amsmath}套件，否則要使用 \LaTeX 內建的 \verb|\mathrm{d}|。另外{\sf physics}套件有提供 \verb|\dd, \dv| 的方便短指令。
+另有一種取巧的方式，就是使用 \verb|\mbox{d}|，被 \verb|\mbox{}| 包住的文字都會使用
+正體。這幾種方式會有小差異，\verb|\mbox{}| 的方式盡量避免，請試著編譯\\
+\verb|$x^{\mathrm{a test}}x^{\mbox{a test}}x^{\text{a test}}x^{\textrm{a test}}$|\\
+看出來的結果就知道了。
+
+這裡要注意的地方是，自從\LaTeX\ 2020-10-01發行後，一些以往只能用在數學模式的
+空白指令，現在已經可以用在文字模式及數學模式了。在此之前，只有 \verb|\,| 能用在
+文字模式裡頭。
 
 \marginpar{\back}
