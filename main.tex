@@ -12,7 +12,7 @@
 \makeatother
 
 % siunitx 和 physics 會有衝突 \qty 要用 \SI 取代。
-\usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath,siunitx,textcomp}
+\usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath,siunitx,textcomp,setspace}
 \usepackage[nomath]{libertinus}
 %\usepackage[math-style=ISO]{unicode-math}
 
@@ -27,7 +27,7 @@
   skipabove=2ex]{Wrong}
 \newmdenv[linecolor=britishracinggreen,frametitle=正：,leftmargin=1em,
   rightmargin=1em,topline=false,bottomline=false,linewidth=1.2pt,
-  skipabove=2ex]{Right}
+  skipabove=2ex,skipbelow=1ex]{Right}
 
 % 回目錄的定義
 \newcommand{\back}{%
