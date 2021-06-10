@@ -16,10 +16,11 @@ TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，�
 以下說明各種特殊符號的鍵入方式。至於取巧用 \verb|\char`\\| 的方式，在章節標題時
 最好不用，因為 pdf bookmarks 的顯示會不正常（無法正確轉換為ascii或UTF-16BE）。
 
-%{\small
+\vspace{.5\baselineskip}
 \begin{center}
-\setstretch{1.0}
+\setstretch{1.2}
 \begin{tabular}{llll}
+\hline
 符號 & 作用 & 文稿上使用 & \LaTeX\ 的替代指令 \\
 \hline
 \textbackslash & 下排版命令 & \verb|$\backslash$| & \verb|\textbackslash|\\
@@ -34,7 +35,8 @@ TeX 裡頭有一些特殊字元是無法直接鍵入的，例如倒斜線 \，�
 \textless      & 數學模式中的小於符號 & \verb|$<$| & \verb|\textless| \\
 \textgreater & 數學模式中的大於符號   & \verb|$>$| & \verb|\textgreater| \\
 \textbar     & OT1，數學模式中才能正確顯示 & \verb+$|$+ & \verb|\textbar| \\
-\&           & 表格中的分隔符號   & \verb|\&| & NA
+\&           & 表格中的分隔符號   & \verb|\&| & NA \\
+\hline
 \end{tabular}
 \end{center}
-%\par}  % \par fixes the line spacing.
+\vspace{.5\baselineskip}
