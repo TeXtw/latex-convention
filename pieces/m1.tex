@@ -28,8 +28,26 @@
 \verb|$x^{\mathrm{a test}}x^{\mbox{a test}}x^{\text{a test}}x^{\textrm{a test}}$|\\
 看出來的結果就知道了。
 
+以下列出有關空白的指令：
+
+\vspace{.5\baselineskip}
+\begin{center}
+\setstretch{1.2}
+\begin{tabular}{llll}
+\hline
+指令 & 作用 & 指令 & 作用 \\
+\hline
+\verb|\quad| & 空出一個 em 單位的空白 & \verb|\qquad| & 空出兩個 em 的空白 \\
+\verb|\,| & 加入 1/6 quad 的空白 & \verb|\!| & 減去 1/6 quad 的空白 \\
+\verb|\;| & 加入 5/18 quad 的空白 & \verb|\:| & 加入 2/9 quad 的空白\\
+\hline
+\end{tabular}
+\end{center}
+\vspace{.5\baselineskip}
+
 這裡要注意的地方是，自從\LaTeX\ 2020-10-01發行後，一些以往只能用在數學模式的
-空白指令，現在已經可以用在文字模式及數學模式了。在此之前，只有 \verb|\,| 能用在
-文字模式裡頭。
+空白指令，現在已經可以用在文字模式及數學模式了。在此之前，
+\verb|\,|、\verb|\quad| 及 \verb|\qquad| 可以用在一般的文字模式及數學模式，
+其他的只能使用在數學模式中。
 
 \marginpar{\back}
