@@ -4,6 +4,8 @@
 % Chat: https://t.me/TWTUG  (Taiwan TeX User Group)
 
 \documentclass[11pt,a4paper]{article}
+% which package used.
+%\listfiles
 \usepackage[a4paper,textwidth=410pt,textheight=660pt]{geometry}
 % 定義 input 路徑
 \makeatletter
@@ -12,6 +14,7 @@
 \makeatother
 
 % siunitx 和 physics 會有衝突 \qty 要用 \SI 取代。
+\usepackage[svgnames]{xcolor}
 \usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath,siunitx,textcomp,setspace,
   upgreek}
 \usepackage[nomath]{libertinus}
@@ -29,6 +32,11 @@
 \newmdenv[linecolor=britishracinggreen,frametitle=正：,leftmargin=1em,
   rightmargin=1em,topline=false,bottomline=false,linewidth=1.2pt,
   skipabove=2ex,skipbelow=1ex]{Right}
+
+% 定義程式碼
+\newmdenv[leftmargin=1em,rightmargin=1em,linecolor=LightGrey!60,
+  linewidth=1.5pt,skipabove=2ex,skipbelow=.5ex,
+  backgroundcolor=LightGrey!20]{Code}
 
 % 回目錄的定義
 \newcommand{\back}{%
@@ -73,18 +81,20 @@
 %目錄，目錄本身的各小節本就有超連結的功能。為了閱讀方便，目錄是放在文件的
 %最後，當成索引使用。
 
-\input{b1}
+  \input{b1}
 
-\marginpar{\back}
+  \marginpar{\back}
 
-\input{b2}
+  \input{b2}
 
-\marginpar{\back}
+  \marginpar{\back}
 
-\input{b3}
+  \input{b3}
 
 \section{套件使用}
 \label{sec:package}
+
+  \input{p1}
 
 \section{使用中文}
 \label{sec:chinese}
@@ -92,9 +102,9 @@
 \section{數理式子}
 \label{sec:math}
 
-\input{m1}
-\input{m2}
-\input{m3}
+  \input{m1}
+  \input{m2}
+  \input{m3}
 
 \section{圖表處理}
 \label{sec:figure}
