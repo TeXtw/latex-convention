@@ -1,0 +1,41 @@
+\subsection{重複載入的套件}
+
+\begin{Wrong}
+\begin{verbatim}
+\usepackage{hyperref}
+\usepackage{url}
+\end{verbatim}
+
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+\usepackage{hyperref}
+\end{verbatim}
+
+\end{Right}
+
+在\LaTeX 的使用上，引用套件（package）是避免不了，但\LaTeX 的套件，超過
+四千個，這麼多的套件，其中難免會有衝突。很不幸的，並沒有很好的工具來預知
+哪些套件會衝突，只能靠使用過的人的經驗及自行使用時的發現。
+
+一些套件會預設載入其他套件，這樣這些預設會載入的套件就無需重複載入了。不
+過，也很不幸的，並沒有一個完美的工具預知某套件會預設載入哪些其他的套件，
+除非你打開這個套件的原始碼，去看看預設載入了什麼套件。或者加入一行 \verb|\listfiles| 於
+其他套件載入之前，然後編譯後開啟 \verb|*.log| 檔，找到 \verb|*File List*| 的地方，
+會列出所使用的套件及其版本\footnote{有一個很dirty的小程式{\tt ltxpkg}，可以在\url{https://github.com/qtnez/luatexja-template/tree/main/tools}找到。}。
+
+這個例子裡頭，{\sf hyperref}套件，預設就是會載入{\sf url}套件，因此無需
+重複載入。那麼如果想傳參數給{\sf url}時怎麼辦？這時可以在{\sf hyperef}之前載入
+{\sf url}並指定參數。
+
+\begin{Code}
+\setstretch{1.0}
+\begin{verbatim}
+\documentclass{article}
+\usepackage[hyphens]{url}
+\usepackage{hyperref}
+\end{verbatim}
+\end{Code}
+
+\marginpar{\back}
