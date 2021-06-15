@@ -1,0 +1,52 @@
+\subsection{數式環境下上不可留白}
+
+\begin{Wrong}
+\begin{verbatim}
+這是一個測試。
+
+\begin{equation*}
+g(x)=\sqrt{9-x^2}
+\end{equation*}
+\end{verbatim}
+這是一個測試。
+
+\begin{equation*}
+g(x)=\sqrt{9-x^2}
+\end{equation*}
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+這是一個測試。
+\begin{equation*}
+g(x)=\sqrt{9-x^2}
+\end{equation*}
+\end{verbatim}
+這是一個測試。
+\begin{equation*}
+g(x)=\sqrt{9-x^2}
+\end{equation*}
+\end{Right}
+
+這裡會發現留有空白行的{\tt equation}環境，上面會多空出更多的空白行出來。
+要在數式環境變動上下空白，要由特定的指令來完成，不能手動的去留個空白行，
+這為這個空白行被\TeX 解釋成段落。
+
+調整數式上下的空白，可以使用特定的指令，例如：
+
+\begin{Code}
+\setstretch{1.0}
+\begin{verbatim}
+\abovedisplayshortskip=10pt
+\belowdisplayshortskip=10pt
+\begin{equation}
+g(x)=\sqrt{9-x^2}
+\end{equation}
+\end{verbatim}
+\end{Code}
+
+同樣的情況發生在 \verb|\[...\]|，上下亦不可多出空白行。隨文數式，
+因為它是要「隨文」的，因此在 \verb|\(...\)| 或是 \verb|$...$| 前後則要有個空白，
+同義的 \verb|\begin{math}...\end{math}| 同樣是不能有多餘的空白行的。
+
+\marginpar{\back}
