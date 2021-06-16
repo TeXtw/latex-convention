@@ -1,0 +1,68 @@
+\subsection{學模式中改變字體大小}
+
+\begin{Wrong}
+\begin{verbatim}
+$\huge f(x,y)=\frac{3(x+y)y}{(2xy-7)}$
+\end{verbatim}
+$\huge f(x,y)=\frac{3(x+y)y}{(2xy-7)}$
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+\huge $f(x,y)=\frac{3(x+y)y}{(2xy-7)}$
+\end{verbatim}
+\huge $f(x,y)=\frac{3(x+y)y}{(2xy-7)}$
+\end{Right}
+
+在數學模式中，不能使用正常文字模式中改變字體大小的指令，這不僅不能改變字體大小，
+而且編譯時還會出現錯誤訊息：
+
+\begin{Code}
+\begin{verbatim}
+LaTeX Font Warning: Command \huge invalid in math mode on input line 38.
+\end{verbatim}
+\end{Code}
+
+要改變數學模式中的字體大小，可以使用數學模式下專用的指令，或者將改變字體大小的指令移出
+數學模式外。以下是能用於數學模式的指令：
+
+\vspace{.5\baselineskip}
+\begin{center}
+\setstretch{1.2}
+\begin{tabular}{ll}
+\hline
+指令 & 作用 \\
+\hline
+\verb|\displaystyle|      & 正常大小字體的展式數式 \\
+\verb|\scriptstyle|       & 縮小成上下標字體的大小 \\
+\verb|\scriptscriptstyle| & 縮小二倍上下標字體的大小 \\
+\verb|\textstyle|         & 回復成正常字體大小 \\
+\hline
+\end{tabular}
+\end{center}
+\vspace{.5\baselineskip}
+
+有引用{\sf amsmath}套件的話，可以在 \verb|\text{}| 中使用文字模式下的改變字體大小的指令：
+
+\begin{Code}
+\setstretch{1.0}
+\begin{verbatim}
+\usepackage{amsmath}
+...
+$\text{\huge $f(x,y)=\frac{3(x+y)y}{(2xy-7)}$}$
+\end{verbatim}
+\end{Code}
+
+引用{\sf graphics}套件，可以在數學模式中使用 \verb|\scalebox| 來改變字體的大小。
+
+\begin{Code}
+\setstretch{1.0}
+\begin{verbatim}
+\usepackage{graphicx}
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{\ensuremath{#2}}}
+...
+$\Scale[1.2]{f(x,y)=\frac{3(x+y)y}{(2xy-7)}}$
+\end{verbatim}
+\end{Code}
+
+\marginpar{\back}
