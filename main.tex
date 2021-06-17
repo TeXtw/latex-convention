@@ -18,7 +18,7 @@
 \usepackage{ltj-zhfonts,parskip,mdframed,mparhack,amsmath,siunitx,textcomp,
   setspace,upgreek}
 \usepackage[time=Chinese,style={Traditional,Normal}]{zhnumber}
-\usepackage{libertinus}
+\usepackage[nomath]{libertinus}
 %\usepackage[math-style=ISO]{unicode-math}
 
 % 定義正誤條邊框顏色及「回目錄」 button 顏色
@@ -73,23 +73,16 @@
 止，文件出不來，輕一點的是排版結果不符合預期。因此這份文件的所謂正誤，也
 包括了語法上的錯誤。
 
+以下每個小節都是一個獨立的單元，為了索引方便，在每一小節末的右手邊
+，會有一個「回目錄」的文字 button，可以馬上回到目錄，利於查找，至於到了
+目錄，目錄本身的各小節本就有超連結的功能。為了閱讀方便，目錄是放在文件的
+最後，當成索引使用。
+
 \section{基礎語法}
 \label{sec:syntax}
 
-%這一節是關於一些較基本、普遍的排版慣例、規範。也包括\LaTeX 的基礎語法的
-%錯用。以下每個小節都是一個獨立的單元，為了索引方便，在每一小節末的右手邊
-%，會有一個「回目錄」的文字 button，可以馬上回到目錄，利於查找，至於到了
-%目錄，目錄本身的各小節本就有超連結的功能。為了閱讀方便，目錄是放在文件的
-%最後，當成索引使用。
-
   \input{b1}
-
-  \marginpar{\back}
-
   \input{b2}
-
-  \marginpar{\back}
-
   \input{b3}
 
 \section{套件使用}
