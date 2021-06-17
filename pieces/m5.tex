@@ -29,6 +29,7 @@ LaTeX Font Warning: Command \huge invalid in math mode on input line 38.
 
 \vspace{.5\baselineskip}
 \begin{center}
+\small
 \setstretch{1.2}
 \begin{tabular}{ll}
 \hline
@@ -46,6 +47,7 @@ LaTeX Font Warning: Command \huge invalid in math mode on input line 38.
 有引用{\sf amsmath}套件的話，可以在 \verb|\text{}| 中使用文字模式下的改變字體大小的指令：
 
 \begin{Code}
+\small
 \setstretch{1.0}
 \begin{verbatim}
 \usepackage{amsmath}
@@ -57,6 +59,7 @@ $\text{\huge $f(x,y)=\frac{3(x+y)y}{(2xy-7)}$}$
 引用{\sf graphics}套件，可以在數學模式中使用 \verb|\scalebox| 來改變字體的大小。
 
 \begin{Code}
+\small
 \setstretch{1.0}
 \begin{verbatim}
 \usepackage{graphicx}
