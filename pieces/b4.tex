@@ -1,0 +1,46 @@
+\subsection{英文句點後的空白}
+
+\begin{Wrong}
+\begin{verbatim}
+Please see Appendix A. We will be there soon.
+\end{verbatim}
+Please see Appendix A. We will be there soon.
+\end{Wrong}
+
+\begin{Right}
+\begin{verbatim}
+Please see Appendix A\@. We will be there soon.
+\end{verbatim}
+Please see Appendix A\@. We will be there soon.
+\end{Right}
+
+\LaTeX 會在英文文章的一個句子結束和另一個句子開始的中間，自動調整成較大一點的空白，
+這可以增加文章的易讀性。所謂一個句子結束，例如：句點（.）、問號（?）、驚嘆號（!）及
+冒號（:）。通常句子結束的最後一個英文字母是小寫的，但這個例子是一個特殊的例外，句點
+之前是大寫的英文字母，\LaTeX 不會判斷成句子結尾，因此不會加大其後的空白，這時我們只好手動去告知\LaTeX 這是句子結束。
+
+相同的情形發生在以下的段落：
+
+\begin{Code}
+\small
+\setstretch{1.0}
+\begin{verbatim}
+Aesop lived in Ancient Greece in the 6th Century BC\@. His fables are
+usually short and end with a moral.
+\end{verbatim}
+\end{Code}
+
+相反的情形，句點前的字母是小寫的，但卻不是句子的結束，這時怎麼辦？這時可以在句點結束後直接加上 \verb|\ |（倒斜線後是一個空白），這樣就會抑制\LaTeX 去判斷成句子結束，例如：
+
+\begin{Code}
+\small
+\begin{verbatim}
+e.g.\ this is a test.
+\end{verbatim}
+\end{Code}
+
+或者採用Chicago style的方式，就是在{\tt e.g.}後加一個英文逗點（{\tt e.g.,}），這樣就不會被判斷成句子結束了（類似的例子還有{\tt i.e.,}）。其他有使用到縮寫字的場合，例如：`Dr.'、`etc.'、`vs.'、`Fig.'、`cf.'、`Mr.'、`Mrs.'，這些都不是代表句子結束，所以，要插入一個正常空白。
+
+有人不喜歡這個規則（例如法國人），如果要中止這種判斷的話，可以在文稿的導言區加上 \verb|\frenchspacing|。
+
+\marginpar{\back}
