@@ -21,7 +21,7 @@
 過，也很不幸的，並沒有一個完美的工具預知某套件會預設載入哪些其他的套件，
 除非你打開這個套件的原始碼，去看看預設載入了什麼套件。或者加入一行 \verb|\listfiles| 於
 其他套件載入之前，然後編譯後開啟 \verb|*.log| 檔，找到 \verb|*File List*| 的地方，
-會列出所使用的套件及其版本\footnote{有一個很dirty的小程式{\tt ltxpkg}，可以在\url{https://github.com/qtnez/luatexja-template/tree/main/tools}找到。}。
+會列出所使用的套件及其版本。\footnote{有一個很dirty的小程式{\tt ltxpkg}，可以在\url{https://github.com/qtnez/luatexja-template/tree/main/tools}找到。}
 
 這個例子裡頭，{\sf hyperref}套件，預設就是會載入{\sf url}套件，因此無需
 重複載入。那麼如果想傳參數給{\sf url}時怎麼辦？這時可以在{\sf hyperef}之前載入
